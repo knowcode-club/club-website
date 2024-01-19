@@ -3,9 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "baseUrl": "./",
-    "paths": {
-      "$utils/*": ["src/utils/*"]
-    },
+    "paths": {},
     "types": ["@finsweet/ts-utils"]
   }
 }

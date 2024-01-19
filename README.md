@@ -45,13 +45,7 @@ To enable automatic deployments to npm, please read the [Continuous Deployment](
 
 ## Getting started
 
-The quickest way to start developing a new project is by [creating a new repository from this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template).
-
-Once the new repository has been created, update the `package.json` file with the correct information, specially the name of the package which has to be unique.
-
 ### Installing
-
-After creating the new repository, open it in your terminal and install the packages by running:
 
 ```bash
 pnpm install
@@ -64,11 +58,6 @@ pnpm playwright install
 ```
 
 You can read more about the use of Playwright in the [Testing](#testing) section.
-
-It is also recommended that you install the following extensions in your VSCode editor:
-
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### Building
 
@@ -226,26 +215,3 @@ You'll have to manually merge this new PR to complete the workflow.
 If an `NPM_TOKEN` secret is included in the repository secrets, Changesets will automatically deploy the new package version to npm.
 See [how to automatically deploy updates to npm](#how-to-automatically-deploy-updates-to-npm) for more info.
 
-#### How to enable Continuous Deployment with Changesets
-
-Some repositories may not have the required permissions to let Changesets interact with the repository.
-
-To enable full compatibility with Changesets, go to the repository settings (`Settings > Actions > General > Workflow Permissions`) and define:
-
-- ✅ Read and write permissions.
-- ✅ Allow GitHub Actions to create and approve pull requests.
-
-Enabling this setting for your organization account (`Account Settings > Actions > General`) could help streamline the process. By doing so, any new repos created under the org will automatically inherit the setting, which can save your teammates time and effort. This can only be applied to organization accounts at the time.
-
-#### How to automatically deploy updates to npm
-
-As mentioned before, Changesets will automatically deploy the new package version to npm if an `NPM_TOKEN` secret is provided.
-
-This npm token should be:
-
-- From Finsweet's npm organization if this repository is meant for internal/product development.
-- From a client's npm organization if this repository is meant for client development. In this case, you should ask the client to [create an npm account](https://www.npmjs.com/signup) and provide you the credentials (or the npm token, if they know how to get it).
-
-Once you're logged into the npm account, you can get an access token by following [this guide](https://docs.npmjs.com/creating-and-viewing-access-tokens).
-
-The access token must be then placed in a [repository secret](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-encrypted-secrets-for-your-repository-and-organization-for-codespaces#adding-secrets-for-a-repository) named `NPM_TOKEN`.

@@ -1,13 +1,12 @@
 {
-  "name": "knowcode-club/club-website",
-  "version": "1.0.0",
+  "name": "@knowcode-club/club-website",
+  "version": "0.0.0",
   "description": "Functionality for knowcode.club",
   "homepage": "https://knowcode.club",
   "license": "ISC",
   "keywords": [],
   "author": {
-    "name": "corsettiDev",
-    "url": "https://knowcode.club/"
+    "name": "corsettiDev"
   },
   "repository": {
     "type": "git",
